@@ -34,6 +34,8 @@
 #include <signal.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <numa.h>
+#include <numaif.h>
 
 #include "access/transam.h"
 #include "access/twophase.h"
@@ -178,6 +180,21 @@ InitProcGlobal(void)
 				j;
 	bool		found;
 	uint32		TotalProcs = MaxBackends + NUM_AUXILIARY_PROCS + max_prepared_xacts;
+	bool		numaAvailable;
+	bitmask*	nodeMask=NULL;
+	int 		numaNode=-1;
+
+	/* check wether numa is available */
+	if(numa_available())
+	{
+		numaAvailable=true;
+		nodeMask=numa_all_nodes_ptr;
+	}	
+	else
+	{
+		numaAvailable=false;
+		nodeMask=NULL;
+	}
 
 	/* Create the ProcGlobal shared structure */
 	ProcGlobal = (PROC_HDR *)
@@ -216,6 +233,11 @@ InitProcGlobal(void)
 	 * between groups.
 	 */
 	procs = (PGPROC *) ShmemAlloc(TotalProcs * sizeof(PGPROC));
+	if(numaAvailable)
+	{
+		numa_interleave_memory(procs,TotalProcs * sizeof(PGPROC));
+	}
+
 	MemSet(procs, 0, TotalProcs * sizeof(PGPROC));
 	ProcGlobal->allProcs = procs;
 	/* XXX allProcCount isn't really all of them; it excludes prepared xacts */
@@ -233,9 +255,13 @@ InitProcGlobal(void)
 	MemSet(pgxacts, 0, TotalProcs * sizeof(PGXACT));
 	ProcGlobal->allPgXact = pgxacts;
 
+	
+
 	for (i = 0; i < TotalProcs; i++)
 	{
 		/* Common initialization for all PGPROCs, regardless of type. */
+		get_mempolicy(&numaNode, NULL, 0, (void*)(&procs[i]), MPOL_F_NODE | MPOL_F_ADDR)
+		procs[i].numaNode=numaNode;
 
 		/*
 		 * Set up per-PGPROC semaphore, latch, and backendLock. Prepared xact

@@ -116,6 +116,8 @@ struct PGPROC
 	int			pid;			/* Backend's process ID; 0 if prepared xact */
 	int			pgprocno;
 
+	int			numaNode;			/* NUMA node id of PGPROC  */
+
 	/* These fields are zero while a backend is still starting up: */
 	BackendId	backendId;		/* This backend's backend ID (if assigned) */
 	Oid			databaseId;		/* OID of database this backend is using */

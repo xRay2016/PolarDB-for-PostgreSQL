@@ -1,0 +1,464 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src'
+make -C ../src/backend generated-headers
+ 
+make[1]: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend'
+cd ../.. && ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --prefix=/home/postgres/tmp_basedir_polardb_pg_1100_bld --with-pgport=5432 --with-openssl --with-libxml --with-perl --with-python --with-tcl --with-pam --with-gssapi --enable-nls --with-libxslt --with-ldap --with-uuid=e2fs --with-icu --with-llvm CFLAGS=  -g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib' CXXFLAGS=-g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 PKG_CONFIG_PATH=/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig:/opt/rh/devtoolset-9/root/usr/lib64/pkgconfig --no-create --no-recursion
+ 
+checking build system type...  
+x86_64-pc-linux-gnu
+ 
+checking host system type... x86_64-pc-linux-gnu
+ 
+checking which template to use... linux
+ 
+checking whether NLS is wanted... yes
+checking for default port number...  
+5432
+ 
+checking for block size...  
+8kB
+ 
+checking for segment size...  
+1GB
+ 
+checking for WAL block size...  
+8kB
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether we are using the GNU C compiler...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to accept ISO C89...  
+none needed
+ 
+checking for g++... no
+checking for c++...  
+no
+ 
+checking whether we are using the GNU C++ compiler...  
+no
+ 
+checking whether g++ accepts -g...  
+no
+ 
+checking for gawk...  
+gawk
+ 
+checking for llvm-config...  
+no
+checking for llvm-config-7... no
+checking for llvm-config-6.0...  
+no
+checking for llvm-config-5.0... no
+checking for llvm-config-4.0... no
+checking for llvm-config-3.9...  
+no
+ 
+configure: error: llvm-config not found, but required when compiling --with-llvm, specify with LLVM_CONFIG=
+
+make[1]: *** [../../config.status] Error 1
+
+make[1]: Failed to remake makefile `../../src/Makefile.global'.
+
+make -C parser gram.h
+ 
+make[2]: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/parser'
+cd ../../.. && ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --prefix=/home/postgres/tmp_basedir_polardb_pg_1100_bld --with-pgport=5432 --with-openssl --with-libxml --with-perl --with-python --with-tcl --with-pam --with-gssapi --enable-nls --with-libxslt --with-ldap --with-uuid=e2fs --with-icu --with-llvm CFLAGS=  -g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib' CXXFLAGS=-g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 PKG_CONFIG_PATH=/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig:/opt/rh/devtoolset-9/root/usr/lib64/pkgconfig --no-create --no-recursion
+ 
+checking build system type...  
+x86_64-pc-linux-gnu
+ 
+checking host system type...  
+x86_64-pc-linux-gnu
+checking which template to use...  
+linux
+checking whether NLS is wanted... yes
+checking for default port number...  
+5432
+ 
+checking for block size...  
+8kB
+ 
+checking for segment size...  
+1GB
+ 
+checking for WAL block size... 8kB
+checking for gcc... gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether we are using the GNU C compiler...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to accept ISO C89...  
+none needed
+ 
+checking for g++...  
+no
+checking for c++... no
+ 
+checking whether we are using the GNU C++ compiler...  
+no
+ 
+checking whether g++ accepts -g...  
+no
+ 
+checking for gawk...  
+gawk
+ 
+checking for llvm-config... no
+checking for llvm-config-7...  
+no
+checking for llvm-config-6.0...  
+no
+checking for llvm-config-5.0...  
+no
+checking for llvm-config-4.0...  
+no
+checking for llvm-config-3.9...  
+no
+ 
+configure: error: llvm-config not found, but required when compiling --with-llvm, specify with LLVM_CONFIG=
+
+make[2]: *** [../../../config.status] Error 1
+
+make[2]: Failed to remake makefile `../../../src/Makefile.global'.
+
+'/usr/bin/perl' ./check_keywords.pl gram.y ../../../src/include/parser/kwlist.h
+/usr/bin/bison -Wno-deprecated  -d -o gram.c gram.y
+touch gram.h
+make[2]: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/parser'
+ 
+make[1]: *** [parser/gram.h] Error 2
+
+make -C storage/lmgr lwlocknames.h lwlocknames.c
+ 
+make[2]: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/storage/lmgr'
+cd ../../../.. && ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --prefix=/home/postgres/tmp_basedir_polardb_pg_1100_bld --with-pgport=5432 --with-openssl --with-libxml --with-perl --with-python --with-tcl --with-pam --with-gssapi --enable-nls --with-libxslt --with-ldap --with-uuid=e2fs --with-icu --with-llvm CFLAGS=  -g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib' CXXFLAGS=-g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 PKG_CONFIG_PATH=/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig:/opt/rh/devtoolset-9/root/usr/lib64/pkgconfig --no-create --no-recursion
+ 
+checking build system type...  
+x86_64-pc-linux-gnu
+ 
+checking host system type...  
+x86_64-pc-linux-gnu
+checking which template to use...  
+linux
+checking whether NLS is wanted...  
+yes
+checking for default port number... 5432
+ 
+checking for block size...  
+8kB
+ 
+checking for segment size...  
+1GB
+ 
+checking for WAL block size...  
+8kB
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether we are using the GNU C compiler...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to accept ISO C89...  
+none needed
+ 
+checking for g++...  
+no
+checking for c++...  
+no
+ 
+checking whether we are using the GNU C++ compiler...  
+no
+ 
+checking whether g++ accepts -g...  
+no
+ 
+checking for gawk...  
+gawk
+ 
+checking for llvm-config...  
+no
+checking for llvm-config-7...  
+no
+checking for llvm-config-6.0...  
+no
+checking for llvm-config-5.0...  
+no
+checking for llvm-config-4.0...  
+no
+checking for llvm-config-3.9... no
+ 
+configure: error: llvm-config not found, but required when compiling --with-llvm, specify with LLVM_CONFIG=
+
+make[2]: *** [../../../../config.status] Error 1
+
+make[2]: Failed to remake makefile `../../../../src/Makefile.global'.
+
+'/usr/bin/perl' ./generate-lwlocknames.pl ../../../../src/backend/storage/lmgr/lwlocknames.txt
+touch lwlocknames.c
+make[2]: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/storage/lmgr'
+make -C catalog distprep generated-header-symlinks
+ 
+make[1]: *** [storage/lmgr/lwlocknames.h] Error 2
+
+make[2]: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/catalog'
+cd ../../.. && ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --prefix=/home/postgres/tmp_basedir_polardb_pg_1100_bld --with-pgport=5432 --with-openssl --with-libxml --with-perl --with-python --with-tcl --with-pam --with-gssapi --enable-nls --with-libxslt --with-ldap --with-uuid=e2fs --with-icu --with-llvm CFLAGS=  -g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib' CXXFLAGS=-g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 PKG_CONFIG_PATH=/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig:/opt/rh/devtoolset-9/root/usr/lib64/pkgconfig --no-create --no-recursion
+ 
+checking build system type...  
+x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking which template to use... linux
+ 
+checking whether NLS is wanted... yes
+checking for default port number... 5432
+ 
+checking for block size...  
+8kB
+ 
+checking for segment size...  
+1GB
+ 
+checking for WAL block size...  
+8kB
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether we are using the GNU C compiler...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to accept ISO C89...  
+none needed
+ 
+checking for g++...  
+no
+checking for c++...  
+no
+ 
+checking whether we are using the GNU C++ compiler...  
+no
+ 
+checking whether g++ accepts -g...  
+no
+ 
+checking for gawk...  
+gawk
+ 
+checking for llvm-config...  
+no
+checking for llvm-config-7...  
+no
+checking for llvm-config-6.0... no
+ 
+checking for llvm-config-5.0...  
+no
+checking for llvm-config-4.0...  
+no
+checking for llvm-config-3.9...  
+no
+ 
+configure: error: llvm-config not found, but required when compiling --with-llvm, specify with LLVM_CONFIG=
+
+make[2]: *** [../../../config.status] Error 1
+
+make[2]: Failed to remake makefile `../../../src/Makefile.global'.
+
+'/usr/bin/perl' -I ../../../src/backend/catalog genbki.pl --set-version=11 ../../../src/include/catalog/pg_proc.h ../../../src/include/catalog/pg_type.h ../../../src/include/catalog/pg_attribute.h ../../../src/include/catalog/pg_class.h ../../../src/include/catalog/pg_attrdef.h ../../../src/include/catalog/pg_constraint.h ../../../src/include/catalog/pg_inherits.h ../../../src/include/catalog/pg_index.h ../../../src/include/catalog/pg_operator.h ../../../src/include/catalog/pg_opfamily.h ../../../src/include/catalog/pg_opclass.h ../../../src/include/catalog/pg_am.h ../../../src/include/catalog/pg_amop.h ../../../src/include/catalog/pg_amproc.h ../../../src/include/catalog/pg_language.h ../../../src/include/catalog/pg_largeobject_metadata.h ../../../src/include/catalog/pg_largeobject.h ../../../src/include/catalog/pg_aggregate.h ../../../src/include/catalog/pg_statistic_ext.h ../../../src/include/catalog/pg_statistic.h ../../../src/include/catalog/pg_rewrite.h ../../../src/include/catalog/pg_trigger.h ../../../src/include/catalog/pg_event_trigger.h ../../../src/include/catalog/pg_description.h ../../../src/include/catalog/pg_cast.h ../../../src/include/catalog/pg_enum.h ../../../src/include/catalog/pg_namespace.h ../../../src/include/catalog/pg_conversion.h ../../../src/include/catalog/pg_depend.h ../../../src/include/catalog/pg_database.h ../../../src/include/catalog/pg_db_role_setting.h ../../../src/include/catalog/pg_tablespace.h ../../../src/include/catalog/pg_pltemplate.h ../../../src/include/catalog/pg_authid.h ../../../src/include/catalog/pg_auth_members.h ../../../src/include/catalog/pg_shdepend.h ../../../src/include/catalog/pg_shdescription.h ../../../src/include/catalog/pg_ts_config.h ../../../src/include/catalog/pg_ts_config_map.h ../../../src/include/catalog/pg_ts_dict.h ../../../src/include/catalog/pg_ts_parser.h ../../../src/include/catalog/pg_ts_template.h ../../../src/include/catalog/pg_extension.h ../../../src/include/catalog/pg_foreign_data_wrapper.h ../../../src/include/catalog/pg_foreign_server.h ../../../src/include/catalog/pg_user_mapping.h ../../../src/include/catalog/pg_foreign_table.h ../../../src/include/catalog/pg_policy.h ../../../src/include/catalog/pg_replication_origin.h ../../../src/include/catalog/pg_default_acl.h ../../../src/include/catalog/pg_init_privs.h ../../../src/include/catalog/pg_seclabel.h ../../../src/include/catalog/pg_shseclabel.h ../../../src/include/catalog/pg_collation.h ../../../src/include/catalog/pg_partitioned_table.h ../../../src/include/catalog/pg_range.h ../../../src/include/catalog/pg_transform.h ../../../src/include/catalog/pg_sequence.h ../../../src/include/catalog/pg_publication.h ../../../src/include/catalog/pg_publication_rel.h ../../../src/include/catalog/pg_subscription.h ../../../src/include/catalog/pg_subscription_rel.h ../../../src/include/catalog/toasting.h ../../../src/include/catalog/indexing.h
+touch bki-stamp
+ 
+prereqdir=`cd './' >/dev/null && pwd` && \
+cd '../../../src/include/catalog/' && for file in pg_proc_d.h pg_type_d.h pg_attribute_d.h pg_class_d.h pg_attrdef_d.h pg_constraint_d.h pg_inherits_d.h pg_index_d.h pg_operator_d.h pg_opfamily_d.h pg_opclass_d.h pg_am_d.h pg_amop_d.h pg_amproc_d.h pg_language_d.h pg_largeobject_metadata_d.h pg_largeobject_d.h pg_aggregate_d.h pg_statistic_ext_d.h pg_statistic_d.h pg_rewrite_d.h pg_trigger_d.h pg_event_trigger_d.h pg_description_d.h pg_cast_d.h pg_enum_d.h pg_namespace_d.h pg_conversion_d.h pg_depend_d.h pg_database_d.h pg_db_role_setting_d.h pg_tablespace_d.h pg_pltemplate_d.h pg_authid_d.h pg_auth_members_d.h pg_shdepend_d.h pg_shdescription_d.h pg_ts_config_d.h pg_ts_config_map_d.h pg_ts_dict_d.h pg_ts_parser_d.h pg_ts_template_d.h pg_extension_d.h pg_foreign_data_wrapper_d.h pg_foreign_server_d.h pg_user_mapping_d.h pg_foreign_table_d.h pg_policy_d.h pg_replication_origin_d.h pg_default_acl_d.h pg_init_privs_d.h pg_seclabel_d.h pg_shseclabel_d.h pg_collation_d.h pg_partitioned_table_d.h pg_range_d.h pg_transform_d.h pg_sequence_d.h pg_publication_d.h pg_publication_rel_d.h pg_subscription_d.h pg_subscription_rel_d.h schemapg.h; do \
+  rm -f $file && ln -s "$prereqdir/$file" . ; \
+done
+touch ../../../src/include/catalog/header-stamp
+make[2]: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/catalog'
+ 
+make -C utils distprep generated-header-symlinks
+ 
+make[1]: *** [submake-catalog-headers] Error 2
+
+make[2]: Entering directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/utils'
+cd ../../.. && ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --prefix=/home/postgres/tmp_basedir_polardb_pg_1100_bld --with-pgport=5432 --with-openssl --with-libxml --with-perl --with-python --with-tcl --with-pam --with-gssapi --enable-nls --with-libxslt --with-ldap --with-uuid=e2fs --with-icu --with-llvm CFLAGS=  -g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib' CXXFLAGS=-g -pipe -Wall -grecord-gcc-switches -I/usr/include/et -O3 PKG_CONFIG_PATH=/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig:/opt/rh/devtoolset-9/root/usr/lib64/pkgconfig --no-create --no-recursion
+ 
+checking build system type...  
+x86_64-pc-linux-gnu
+ 
+checking host system type... x86_64-pc-linux-gnu
+ 
+checking which template to use... linux
+ 
+checking whether NLS is wanted...  
+yes
+checking for default port number... 5432
+ 
+checking for block size...  
+8kB
+ 
+checking for segment size...  
+1GB
+ 
+checking for WAL block size...  
+8kB
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether we are using the GNU C compiler...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to accept ISO C89...  
+none needed
+ 
+checking for g++...  
+no
+checking for c++...  
+no
+ 
+checking whether we are using the GNU C++ compiler...  
+no
+ 
+checking whether g++ accepts -g...  
+no
+ 
+checking for gawk...  
+gawk
+ 
+checking for llvm-config...  
+no
+checking for llvm-config-7...  
+no
+checking for llvm-config-6.0...  
+no
+checking for llvm-config-5.0...  
+no
+checking for llvm-config-4.0...  
+no
+checking for llvm-config-3.9...  
+no
+ 
+configure: error: llvm-config not found, but required when compiling --with-llvm, specify with LLVM_CONFIG=
+
+make[2]: *** [../../../config.status] Error 1
+
+make[2]: Failed to remake makefile `../../../src/Makefile.global'.
+
+'/usr/bin/perl' -I ../../../src/backend/catalog Gen_fmgrtab.pl -I ../../../src/include/ ../../../src/include/catalog/pg_language.dat ../../../src/include/catalog/pg_proc.dat
+touch fmgr-stamp
+ 
+'/usr/bin/perl' ./generate-errcodes.pl ../../../src/backend/utils/errcodes.txt > errcodes.h
+prereqdir=`cd './' >/dev/null && pwd` && \
+cd '../../../src/include/utils/' && for file in fmgroids.h fmgrprotos.h errcodes.h; do \
+  rm -f $file && ln -s "$prereqdir/$file" . ; \
+done
+touch ../../../src/include/utils/header-stamp
+ 
+sed -f ./Gen_dummy_probes.sed probes.d >probes.h
+cd '../../../src/include/utils/' && rm -f probes.h && \
+    ln -s "../../../src/backend/utils/probes.h" .
+make[2]: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend/utils'
+make[1]: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src/backend'
+ 
+make[1]: *** [submake-utils-headers] Error 2
+make: *** [submake-generated-headers] Error 2
+
+make: Leaving directory `/home/postgres/PolarDB-for-PostgreSQL/src'
+ 

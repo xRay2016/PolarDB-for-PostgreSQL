@@ -1,0 +1,16 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "files.associations": {
+        "*.json": "jsonc",
+        "postgres.h": "c",
+        "elog.h": "c",
+        "c.h": "c",
+        "stdio.h": "c",
+        "time.h": "c",
+        "unistd.h": "c",
+        "signal.h": "c",
+        "numa.h": "c",
+        "numaif.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
