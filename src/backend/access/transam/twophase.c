@@ -287,7 +287,7 @@ TwoPhaseShmemInit(void)
 			TwoPhaseState->freeGXacts = &gxacts[i];
 
 			/* associate it with a PGPROC assigned by InitProcGlobal */
-			gxacts[i].pgprocno = PreparedXactProcs[i].pgprocno;
+			gxacts[i].pgprocno = PreparedXactProcs[i]->pgprocno;
 
 			/*
 			 * Assign a unique ID for each dummy proc, so that the range of

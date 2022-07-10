@@ -116,7 +116,7 @@ struct PGPROC
 	int			pid;			/* Backend's process ID; 0 if prepared xact */
 	int			pgprocno;
 
-	int			numaNode;			/* NUMA node id of PGPROC  */
+	int			numaNode;		/* NUMA node id of PGPROC  */
 
 	/* These fields are zero while a backend is still starting up: */
 	BackendId	backendId;		/* This backend's backend ID (if assigned) */
@@ -302,18 +302,18 @@ typedef struct PGXACT
  */
 typedef struct PROC_HDR
 {
-	/* Array of PGPROC structures (not including dummies for prepared txns) */
-	PGPROC	   *allProcs;
+	/* Array of PGPROC structures pointer (not including dummies for prepared txns) */
+	PGPROC	   **allProcs;
 	/* Array of PGXACT structures (not including dummies for prepared txns) */
 	PGXACT	   *allPgXact;
 	/* Length of allProcs array */
 	uint32		allProcCount;
 	/* Head of list of free PGPROC structures */
-	PGPROC	   *freeProcs;
+	PGPROC	   **freeProcs;
 	/* Head of list of autovacuum's free PGPROC structures */
-	PGPROC	   *autovacFreeProcs;
+	PGPROC	   **autovacFreeProcs;
 	/* Head of list of bgworker free PGPROC structures */
-	PGPROC	   *bgworkerFreeProcs;
+	PGPROC	   **bgworkerFreeProcs;
 	/* First pgproc waiting for group XID clear */
 	pg_atomic_uint32 procArrayGroupFirst;
 	/* First pgproc waiting for group transaction status update */
@@ -342,7 +342,7 @@ typedef struct PROC_HDR
 
 extern PGDLLIMPORT PROC_HDR *ProcGlobal;
 
-extern PGPROC *PreparedXactProcs;
+extern PGPROC **PreparedXactProcs;
 
 /* Accessor for PGPROC given a pgprocno. */
 #define GetPGProcByNumber(n) (&ProcGlobal->allProcs[(n)])
